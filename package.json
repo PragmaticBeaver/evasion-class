@@ -1,0 +1,12 @@
+{
+  "name": "foundryvtt-evasion-class",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/PragmaticBeaver/foundryvtt-evasion-class.git",
+  "author": "PragmaticBeaver",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "prettier": "^2.3.2"
+  }
+}
