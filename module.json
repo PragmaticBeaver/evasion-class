@@ -1,0 +1,8 @@
+{
+    "name": "evasion-class",
+    "title": "Evasion Class - The fun way to take damage.",
+    "description": "A simple module to introduce EC (evasion class) into D&D 5e. It aids the standard AC system without messing around with it.",
+    "author": "PragmaticBeaver",
+    "version": "1.0.0",
+    "minimumCoreVersion": "0.8.0"
+}
