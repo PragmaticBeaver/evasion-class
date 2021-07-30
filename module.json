@@ -7,6 +7,7 @@
     "url": "https://github.com/PragmaticBeaver/evasion-class",
     "license": "./LICENSE",
     "minimumCoreVersion": "0.8.0",
+    "compatibleCoreVersion": "0.8.8",
     "system": ["dnd5e"],
     "dependencies": [
         {
