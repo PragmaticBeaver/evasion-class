@@ -36,7 +36,7 @@ export default class EvasionActorSheetNpc extends ActorSheet5eNPC {
         if (this.actor.armor) {
             armorType = this.actor.armor.data.data.armor.type;
         }
-        const ec = this._calcECValue(data.abilities, armorType);
+        const ec = this._calcECValue(this.actor, data.abilities, armorType);
         data.attributes.evasionClass.ec = ec;
         html.find("#evasionClass-ec").text(ec);
     }
@@ -51,16 +51,24 @@ export default class EvasionActorSheetNpc extends ActorSheet5eNPC {
     //      unarmored || light? = 10 + dex-mod;
     //      medium? = 10 + dex-mod (max 2);
     //      heavy? = 10
-    _calcECValue(abilites, armorType) {
+    // shields add there AC to EC
+    _calcECValue(actor, abilites, armorType) {
+        let ec = 0;
         switch (armorType) {
             case "medium":
                 const mod = abilites.dex.mod > 2 ? 2 : abilites.dex.mod;
-                return 10 + mod;
+                ec = 10 + mod;
             case "heavy":
-                return 10;
+                ec = 10;
             default:
                 // light || unarmored
-                return 10 + abilites.dex.mod;
+                ec = 10 + abilites.dex.mod;
         }
+
+        if (actor.shield) {
+            ec += actor.shield.data.data.armor.value;
+        }
+
+        return ec;
     }
 }
