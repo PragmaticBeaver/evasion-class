@@ -14,5 +14,9 @@
             "type": "system"
         }
     ],
-    "scripts": ["src/scripts/evasion-class.js"]
+    "esmodules": ["src/scripts/main.js"],
+    "templates": [
+        "src/templates/evasion-sheet-character.html",
+        "src/templates/evasion-sheet-npc.html"
+    ]
 }
