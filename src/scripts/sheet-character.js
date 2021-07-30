@@ -8,11 +8,17 @@ export default class EvasionActorSheetCharacter extends ActorSheet5eCharacter {
         });
     }
 
+    getData() {
+        return super.getData();
+    }
+
     get template() {
         return "modules/evasion-class/src/templates/evasion-sheet-character.html";
     }
 
     activateListeners(html) {
+        super.activateListeners(html);
+
         const data = this.actor.data.data;
         const ac = data.attributes.ac.value;
 
