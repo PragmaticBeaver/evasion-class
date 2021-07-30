@@ -41,9 +41,9 @@ export default class EvasionActorSheetCharacter extends ActorSheet5eCharacter {
     }
 
     // EC =
-    // unarmored || light? = 10 + dex-mod;
-    // medium? = 10 + dex-mod (max 2);
-    // heavy? = 10
+    //      unarmored || light? = 10 + dex-mod;
+    //      medium? = 10 + dex-mod (max 2);
+    //      heavy? = 10
     _calcECValue(abilites, armorType) {
         switch (armorType) {
             case "medium":
