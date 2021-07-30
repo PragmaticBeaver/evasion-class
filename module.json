@@ -2,21 +2,32 @@
     "name": "evasion-class",
     "title": "Evasion Class - The fun way to take damage",
     "description": "A simple module to introduce EC (evasion class) into D&D 5e. It aids the standard AC system.",
-    "author": "PragmaticBeaver (Dominik Blatzheim)",
+    "author": "PragmaticBeaver",
+    "authors": [
+        {
+          "name": "PragmaticBeaver",
+          "url": "https://github.com/PragmaticBeaver",
+          "discord": "Aiden Acant#0746"
+        }
+      ],
     "version": "1.0.0",
     "url": "https://github.com/PragmaticBeaver/evasion-class",
     "license": "https://github.com/PragmaticBeaver/evasion-class/blob/main/LICENSE",
-    "manifest": "https://github.com/PragmaticBeaver/evasion-class/blob/main/module.json",
+    "readme": "https://github.com/PragmaticBeaver/evasion-class/blob/main/README.md",
+    "download": "https://github.com/PragmaticBeaver/evasion-class/releases/download/v1.0-alpha/evasion-class.zip",
+    "manifest": "https://github.com/PragmaticBeaver/evasion-class/releases/latest/download/module.json",
     "minimumCoreVersion": "0.8.0",
     "compatibleCoreVersion": "0.8.8",
     "system": ["dnd5e"],
     "dependencies": [
         {
-            "name": "dnd5e",
-            "type": "system"
+            "name": "dnd5e"
         }
     ],
+    "scripts": [],
     "esmodules": ["src/scripts/main.js"],
+    "styles": [],
+    "languages": [],
     "templates": [
         "src/templates/evasion-sheet-character.html",
         "src/templates/evasion-sheet-npc.html"
