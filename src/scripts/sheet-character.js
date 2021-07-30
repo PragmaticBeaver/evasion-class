@@ -28,7 +28,10 @@ export default class EvasionActorSheetCharacter extends ActorSheet5eCharacter {
         data.attributes.evasionClass.ar = ar;
         html.find("#evasionClass-ar").text(ar);
 
-        const armorType = this.actor.armor.data.data.armor.type;
+        let armorType = "";
+        if (this.actor.armor) {
+            armorType = this.actor.armor.data.data.armor.type;
+        }
         const ec = this._calcECValue(data.abilities, armorType);
         data.attributes.evasionClass.ec = ec;
         html.find("#evasionClass-ec").text(ec);
