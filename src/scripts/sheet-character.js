@@ -1,4 +1,5 @@
 import ActorSheet5eCharacter from "../../../../systems/dnd5e/module/actor/sheets/character.js";
+import { calcECValue, calcARValue } from "./calc.js";
 
 export default class EvasionActorSheetCharacter extends ActorSheet5eCharacter {
     static get defaultOptions() {
@@ -24,47 +25,12 @@ export default class EvasionActorSheetCharacter extends ActorSheet5eCharacter {
 
         data.attributes.evasionClass = {};
 
-        const ar = this._calcARValue(ac);
+        const ar = calcARValue(ac);
         data.attributes.evasionClass.ar = ar;
         html.find("#evasionClass-ar").text(ar);
 
-        let armorType = "";
-        if (this.actor.armor) {
-            armorType = this.actor.armor.data.data.armor.type;
-        }
-        const ec = this._calcECValue(this.actor, data.abilities, armorType);
+        const ec = calcECValue(this.actor);
         data.attributes.evasionClass.ec = ec;
         html.find("#evasionClass-ec").text(ec);
-    }
-
-    // AR = AC - 10
-    _calcARValue(ac) {
-        const ar = ac - 10;
-        return ar < 0 ? 0 : ar;
-    }
-
-    // EC =
-    //      unarmored || light? = 10 + dex-mod;
-    //      medium? = 10 + dex-mod (max 2);
-    //      heavy? = 10
-    // shields add there AC to EC
-    _calcECValue(actor, abilites, armorType) {
-        let ec = 0;
-        switch (armorType) {
-            case "medium":
-                const mod = abilites.dex.mod > 2 ? 2 : abilites.dex.mod;
-                ec = 10 + mod;
-            case "heavy":
-                ec = 10;
-            default:
-                // light || unarmored
-                ec = 10 + abilites.dex.mod;
-        }
-
-        if (actor.shield) {
-            ec += actor.shield.data.data.armor.value;
-        }
-
-        return ec;
     }
 }
