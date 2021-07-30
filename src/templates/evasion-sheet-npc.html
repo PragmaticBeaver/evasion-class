@@ -131,46 +131,18 @@
 
                 <!-- AR -->
                 <li class="attribute armor">
-                    <h4 class="attribute-name box-title">
-                        Armor Reduction
-                        <a
-                            class="config-button"
-                            data-action="armor"
-                            title="{{localize 'DND5E.ArmorConfig'}}"
-                            ><i class="fas fa-cog"></i
-                        ></a>
-                    </h4>
-                    <div
-                        class="attribute-value attributable"
-                        data-property="attributes.ac"
-                    >
-                        <span>{{data.attributes.ac.value}}</span>
+                    <h4 class="attribute-name box-title">Armor Reduction</h4>
+                    <div class="attribute-value attributable">
+                        <span id="evasionClass-ar">none</span>
                     </div>
-                    <footer class="attribute-footer">
-                        <span>{{labels.armorType}}</span>
-                    </footer>
                 </li>
 
                 <!-- EC -->
                 <li class="attribute armor">
-                    <h4 class="attribute-name box-title">
-                        Evasion Class
-                        <a
-                            class="config-button"
-                            data-action="armor"
-                            title="{{localize 'DND5E.ArmorConfig'}}"
-                            ><i class="fas fa-cog"></i
-                        ></a>
-                    </h4>
-                    <div
-                        class="attribute-value attributable"
-                        data-property="attributes.ac"
-                    >
-                        <span>{{data.attributes.ac.value}}</span>
+                    <h4 class="attribute-name box-title">Evasion Class</h4>
+                    <div class="attribute-value attributable">
+                        <span id="evasionClass-ec">none</span>
                     </div>
-                    <footer class="attribute-footer">
-                        <span>{{labels.armorType}}</span>
-                    </footer>
                 </li>
 
                 <li class="attribute movement">
