@@ -13,5 +13,6 @@
             "name": "dnd5e",
             "type": "system"
         }
-    ]
+    ],
+    "scripts": ["src/scripts/evasion-class.js"]
 }
