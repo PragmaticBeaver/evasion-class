@@ -5,7 +5,7 @@
         "source.fixAll": true
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "eslint.workingDirectories": ["./../src"],
+    "eslint.workingDirectories": ["./../"],
     "git.ignoreLimitWarning": true,
     "typescript.preferences.importModuleSpecifier": "relative",
     "editor.tabSize": 4
