@@ -33,11 +33,7 @@ export default class EvasionActorSheetNpc extends ActorSheet5eNPC {
         data.attributes.evasionClass.ar = ar;
         html.find("#evasionClass-ar").text(ar);
 
-        let armorType = "";
-        if (this.actor.armor) {
-            armorType = this.actor.armor.data.data.armor.type;
-        }
-        const ec = calcECValue(this.actor, data.abilities, armorType);
+        const ec = calcECValue(this.actor);
         data.attributes.evasionClass.ec = ec;
         html.find("#evasionClass-ec").text(ec);
     }
